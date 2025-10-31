@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #1a1a1a;
+            background-color: #232323;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         }
         #main-container {
@@ -31,7 +31,7 @@
             display: flex;
             align-items: flex-end;
             height: 45px; 
-            background-color: #252526; 
+            background-color: #202020; 
             padding-left: 10px;
         }
         
@@ -43,7 +43,7 @@
         .flex-spacer {
             flex-grow: 1;
             height: 100%; 
-            background-color: #252526; 
+            background-color: #202020; 
         }
 
         .tab {
@@ -68,9 +68,9 @@
             background-color: #3e3e42;
         }
         .tab.active {
-            background-color: #1a1a1a; 
+            background-color: #232323; 
             color: #ffffff;
-            border-bottom: 2px solid #5DADE2;
+            border-bottom: 2px solid #808080;
             margin-bottom: -2px; 
         }
         .tab-close {
@@ -103,7 +103,7 @@
             flex-grow: 1;
             width: 100%;
             overflow: hidden;
-            border-top: 2px solid #1a1a1a; 
+            border-top: 2px solid #808080; 
         }
 
         #rename-modal-overlay {
@@ -159,7 +159,7 @@
             color: #ffffff;
         }
         #rename-ok-btn {
-            background-color: #5DADE2;
+            background-color: #808080;
             color: #ffffff;
         }
     </style>
@@ -578,7 +578,7 @@
         }
 
         function createFirstTab() {
-            const firstTab = new Tab("script_1.lua", `print('Astral Executor')`);
+            const firstTab = new Tab("script_1.lua", `print('discord.gg/getcravex')`);
             tabs.push(firstTab);
             document.getElementById("tab-bar").appendChild(firstTab.element);
             firstTab.activate();
@@ -596,7 +596,7 @@
 
         function createNewTab() {
             const scriptNumber = getNextScriptNumber();
-            const newTab = new Tab(`script_${scriptNumber}.lua`, `print('Astral Executor')`);
+            const newTab = new Tab(`script_${scriptNumber}.lua`, `print('discord.gg/getcravex')`);
             tabs.push(newTab);
             document.getElementById("tab-bar").appendChild(newTab.element);
             newTab.activate();
@@ -607,7 +607,7 @@
             constructor(name, content) {
                 this.id = `tab-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`, 
                 this.name = name || `script_${tabs.length+1}.lua`, 
-                this.content = content || "print('Astral Executor')", 
+                this.content = content || "print('discord.gg/getcravex')", 
                 this.model = monaco.editor.createModel(this.content, 'lua'),
                 this.element = this.createTabElement()
             }
@@ -846,15 +846,15 @@
                     foreground: "#A9D0F5"
                 }],
                 colors: {
-                    "editor.background": "#1a1a1a",
+                    "editor.background": "#232323",
                     "editor.foreground": "#FFFFFF",
                     "editorLineNumber.foreground": "#555",
-                    "editorLineNumber.activeForeground": "#5DADE2",
-                    "editorCursor.foreground": "#5DADE2",
-                    "editor.selectionBackground": "#5DADE240",
-                    "editor.inactiveSelectionBackground": "#5DADE220",
+                    "editorLineNumber.activeForeground": "#808080",
+                    "editorCursor.foreground": "#808080",
+                    "editor.selectionBackground": "#80808040",
+                    "editor.inactiveSelectionBackground": "#80808020",
                     "editorSuggestWidget.background": "#252525",
-                    "editorSuggestWidget.highlightForeground": "#5DADE2"
+                    "editorSuggestWidget.highlightForeground": "#808080"
                 }
             })
 
@@ -884,7 +884,7 @@
             })
 
             editor = monaco.editor.create(document.getElementById("container"), {
-                value: "print('Astral Executor')",
+                value: "print('discord.gg/getcravex')",
                 language: "lua",
                 theme: "cravex-theme",
                 fontSize: 14,
