@@ -578,7 +578,7 @@
         }
 
         function createFirstTab() {
-            const firstTab = new Tab("script_1.lua", `print('discord.gg/getcravex')`);
+            const firstTab = new Tab("untitled.lua", `print('discord.gg/tHS3XP45AG')`);
             tabs.push(firstTab);
             document.getElementById("tab-bar").appendChild(firstTab.element);
             firstTab.activate();
@@ -588,7 +588,7 @@
         function getNextScriptNumber() {
             let number = 1;
             const tabNames = tabs.map(t => t.name);
-            while (tabNames.includes(`script_${number}.lua`)) {
+            while (tabNames.includes(`untitled_${number}.lua`)) {
                 number++;
             }
             return number;
@@ -596,7 +596,7 @@
 
         function createNewTab() {
             const scriptNumber = getNextScriptNumber();
-            const newTab = new Tab(`script_${scriptNumber}.lua`, `print('discord.gg/getcravex')`);
+            const newTab = new Tab(`untitled_${scriptNumber}.lua`, `print('discord.gg/tHS3XP45AG')`);
             tabs.push(newTab);
             document.getElementById("tab-bar").appendChild(newTab.element);
             newTab.activate();
@@ -606,8 +606,8 @@
         class Tab {
             constructor(name, content) {
                 this.id = `tab-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`, 
-                this.name = name || `script_${tabs.length+1}.lua`, 
-                this.content = content || "print('discord.gg/getcravex')", 
+                this.name = name || `untitled_${tabs.length+1}.lua`, 
+                this.content = content || "print('discord.gg/tHS3XP45AG')", 
                 this.model = monaco.editor.createModel(this.content, 'lua'),
                 this.element = this.createTabElement()
             }
@@ -884,7 +884,7 @@
             })
 
             editor = monaco.editor.create(document.getElementById("container"), {
-                value: "print('discord.gg/getcravex')",
+                value: "print('discord.gg/tHS3XP45AG')",
                 language: "lua",
                 theme: "cravex-theme",
                 fontSize: 14,
